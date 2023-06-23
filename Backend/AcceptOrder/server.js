@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 const filePath = fileURLToPath(import.meta.url);
 const dirName = path.dirname(filePath);
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8050;
 app.use(express.static(path.join(dirName, "uploads")));
 
 const filePath1 = fileURLToPath(import.meta.url);
@@ -40,7 +40,5 @@ connection.once("open", () => {
 
 // sithanga
 
-
 import Accept from "./Routes/acptOrder-routes.js";
 app.use("/Accept", Accept);
-

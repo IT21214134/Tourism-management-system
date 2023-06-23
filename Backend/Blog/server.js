@@ -9,7 +9,7 @@ import { fileURLToPath } from "url";
 const filePath = fileURLToPath(import.meta.url);
 const dirName = path.dirname(filePath);
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8060;
 app.use(express.static(path.join(dirName, "uploads")));
 
 const filePath1 = fileURLToPath(import.meta.url);
