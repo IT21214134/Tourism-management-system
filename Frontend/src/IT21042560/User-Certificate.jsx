@@ -28,7 +28,7 @@ export default function Certificate() {
 
       const getUser = () => {
         console.log("hi")
-        axios.get(`http://localhost:5000/user/user/${id}`).then((res)=>{
+        axios.get(`http://localhost:9020/user/user/${id}`).then((res)=>{
 
             setUserId(res.data.user.user_id);
             setUserName(res.data.user.userName);

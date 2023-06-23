@@ -23,7 +23,7 @@ const AddBlog = () => {
     form.append("image", image);
 
     axios
-      .post(`http://localhost:5000/Blog/addBlog`, form)
+      .post(`http://localhost:8060/Blog/addBlog`, form)
       .then(() => {
         alert("Blog added");
       })

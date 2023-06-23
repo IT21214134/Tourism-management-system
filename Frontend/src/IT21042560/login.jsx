@@ -102,7 +102,7 @@ function Login() {
 
       console.log(badge);
       axios
-        .post("http://localhost:5000/user/usersignup", form)
+        .post("http://localhost:9020/user/usersignup", form)
         .then(() => {
           toast.success("Successfully Registred");
           navigate("/userLogin");
@@ -144,7 +144,7 @@ function Login() {
       };
 
       const uid = axios
-        .post("http://localhost:5000/user/usersignin", user)
+        .post("http://localhost:9020/user/usersignin", user)
         .then((response) => {
           toast.success("Successfull Login!");
           const uid = response.data.payload.uid;

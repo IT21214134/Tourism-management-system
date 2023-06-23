@@ -6,7 +6,7 @@ import { authConstants } from '../actions/constants';
 const token = window.localStorage.getItem("token");
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000",
+  baseURL: "http://localhost:8080",
   headers: {
     Authorization: token ? `Bearer ${token}` : "",
   },

@@ -14,7 +14,7 @@ export default function ViewBlogs() {
   useEffect(() => {
     function getBlog() {
       axios
-        .get(`http://localhost:5000/Blog/viewAll`)
+        .get(`http://localhost:8060/Blog/viewAll`)
         .then((res) => {
           setBlog(res.data);
         })
@@ -29,7 +29,7 @@ export default function ViewBlogs() {
     var result = window.confirm("Are you sure?");
     if (result === true) {
       axios
-        .delete(`http://localhost:5000/Blog/deleteBlog/${e._id}`)
+        .delete(`http://localhost:8060/Blog/deleteBlog/${e._id}`)
         .then((res) => {})
         .catch((e) => {
           alert(e);
@@ -64,7 +64,7 @@ export default function ViewBlogs() {
                 <td>{e.fullDescription}</td>
                 <td>
                   <MDBCardImage
-                    src={`http://localhost:5000/${e.image}`}
+                    src={`http://localhost:8060/${e.image}`}
                     alt="Blog Image"
                     className="blog-image"
                     fluid

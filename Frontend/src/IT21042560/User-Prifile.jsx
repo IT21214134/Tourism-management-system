@@ -76,7 +76,7 @@ export default function UserProfile() {
 
       const getPost = () => {
         console.log("hi")
-        axios.get(`http://localhost:5000/userPost/post/${id}`).then((res)=>{
+        axios.get(`http://localhost:9030/userPost/post/${id}`).then((res)=>{
             //console.log(res.data.posts);
             setPosts(res.data.posts);
         }).catch((err)=>{
@@ -96,9 +96,9 @@ export default function UserProfile() {
       const deletePost = (e) =>{
         var result = window.confirm("Are you sure?");
       if(result == true){
-          axios.delete(`http://localhost:5000/userPost/postdelete/${e}`).then((res)=>{
+          axios.delete(`http://localhost:9030/userPost/postdelete/${e}`).then((res)=>{
 
-          axios.put(`http://localhost:5000/user/countReduce/${id}`).then(() => {
+          axios.put(`http://localhost:9030/user/countReduce/${id}`).then(() => {
                             
             }).catch((err) =>{
         
@@ -116,7 +116,7 @@ export default function UserProfile() {
 
       const getUser = () => {
         console.log("hi")
-        axios.get(`http://localhost:5000/user/user/${id}`).then((res)=>{
+        axios.get(`http://localhost:9030/user/user/${id}`).then((res)=>{
 
             setUserId(res.data.user.user_id);
             setUserName(res.data.user.userName);

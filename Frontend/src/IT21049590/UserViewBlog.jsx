@@ -28,7 +28,7 @@ const AllBlogs = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/Blog/viewAll")
+      .get("http://localhost:8060/Blog/viewAll")
       .then((response) => {
         setBlogs(response.data);
         console.log(response.data);
@@ -61,7 +61,7 @@ const AllBlogs = () => {
 
   const handleLikeButton = async (bid) => {
     try {
-      const response = await axios.patch("http://localhost:5000/Blog/like", {
+      const response = await axios.patch("http://localhost:8060/Blog/like", {
         id: id,
         bid: bid,
       });
@@ -74,7 +74,7 @@ const AllBlogs = () => {
   };
   const handleDislikeButton = async (bid) => {
     try {
-      const response = await axios.patch("http://localhost:5000/Blog/dislike", {
+      const response = await axios.patch("http://localhost:8060/Blog/dislike", {
         id: id,
         bid: bid,
       });

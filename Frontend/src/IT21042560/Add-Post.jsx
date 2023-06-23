@@ -41,7 +41,7 @@ const AddPost = () => {
 
     useEffect(()=>{
         function getPosts(){
-        axios.get("http://localhost:5000/userPost/allpost").then((res)=>{
+        axios.get("http://localhost:9030/userPost/allpost").then((res)=>{
             setPosts(res.data.payload);
            
             
@@ -96,12 +96,12 @@ const AddPost = () => {
                     form.append('post_remark', remark);
                     form.append('post_image', post_image);
         
-                    axios.post("http://localhost:5000/userPost/postadd",form).then(()=>{
+                    axios.post("http://localhost:9030/userPost/postadd",form).then(()=>{
                         toast.success("Successfully Uploaded Your Status");
                         
 
 
-                        axios.put(`http://localhost:5000/user/count/${id}`).then(() => {
+                        axios.put(`http://localhost:9030/user/count/${id}`).then(() => {
                             
                         }).catch((err) =>{
                      
@@ -253,7 +253,7 @@ const AddPost = () => {
             component="img"
 
 
-            image={`http://localhost:5000/${post.post_image}`}
+            image={`http://localhost:9030/${post.post_image}`}
 
             alt={post.post_image}
 

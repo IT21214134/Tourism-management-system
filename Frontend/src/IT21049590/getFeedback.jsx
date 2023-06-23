@@ -33,7 +33,7 @@ const BlogFeedbacks = () => {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/Blog/getFeedback/${id}`
+          `http://localhost:8060/Blog/getFeedback/${id}`
         );
         const data = await response.json();
         setFeedbacks(data);

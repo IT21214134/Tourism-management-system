@@ -66,7 +66,7 @@ function AdminLogin() {
       form.append("password", password);
       form.append("contactNo", contactNo);
       axios
-        .post("http://localhost:5000/Admin/adminSignup", form)
+        .post("http://localhost:8070/Admin/adminSignup", form)
         .then(() => {
           toast.success("Successfully Registred");
           navigate("/userLogin");
@@ -103,7 +103,7 @@ function AdminLogin() {
       };
 
       const uid = axios
-        .post("http://localhost:5000/Admin/adminSignin", user)
+        .post("http://localhost:8070/Admin/adminSignin", user)
         .then((response) => {
           toast.success("Successfull Login!");
           const uid = response.data.payload.uid;

@@ -50,7 +50,7 @@ const Feedback = ({ blogId }) => {
     const fetchBlog = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/Blog/getBlogById/${id}`
+          `http://localhost:8060/Blog/getBlogById/${id}`
         );
         setBlog(response.data);
       } catch (error) {
@@ -65,7 +65,7 @@ const Feedback = ({ blogId }) => {
     console.log(id);
     try {
       const response = await axios.post(
-        `http://localhost:5000/Blog/addFeedback/${id}`,
+        `http://localhost:8060/Blog/addFeedback/${id}`,
         {
           firstName,
           lastName,
@@ -113,7 +113,7 @@ const Feedback = ({ blogId }) => {
           <CardMedia
             component="img"
             height="500"
-            image={`http://localhost:5000/${blog.image}`}
+            image={`http://localhost:8060/${blog.image}`}
             alt={blog.title}
             sx={{ objectFit: "cover" }}
           />

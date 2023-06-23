@@ -16,7 +16,7 @@ const UpdateBlog = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/Blog/getBlogById/${id}`)
+      .get(`http://localhost:8060/Blog/getBlogById/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setShortDescription(response.data.shortDescription);
